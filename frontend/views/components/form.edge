@@ -1,0 +1,208 @@
+<div class="mobile">
+<section class="order-summary">
+  <form action="{{ route('/order') }}" method="POST" >
+  <div class="block">
+    <h2>
+      <span class="section-circle">1</span>
+      Personal Information
+    </h2>
+
+    <div class="indent-section">
+      <div class="input--smaller">
+        @!component('components/input', {
+          label: 'First name',
+          placeholder: 'Elon',
+          id: 'firstName',
+          pattern: '[A-Za-z]{1,32}'
+        })
+      </div>
+
+      <div class="input--smaller">
+        @!component('components/input', {
+          label: 'Last name',
+          placeholder: 'Musk',
+          id: 'lastName',
+          pattern: '[A-Za-z]{1,32}'
+        })
+      </div>
+   <div class="input--bigger">
+      @!component('components/input', {
+        label: 'Email',
+        placeholder: 'elon@spacex.com',
+        id: 'email',
+        type: 'email',
+        pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}'
+      })
+   </div>
+      <div class="input--smaller">
+        <div class="form-group">
+          <label for="country" class="label">Country</label>
+
+          <select id="country" name="country" class="input-select form-group-select" onclick="this.setAttribute('value', this.value);" value="United States">
+
+            <option value="United States">United States</option>
+            <option value="Poland">Poland</option>
+          </select>
+        
+      
+    
+          </span>
+        </div>
+      </div>
+
+      <div class="input--smaller ">
+        @!component('components/input', {
+          label: 'Postal Code',
+          placeholder: '10001',
+          id: 'postalCode',
+          type: 'number',
+          pattern: '[0-9]{5}'
+        })
+      </div>
+   <div class="input--bigger">
+      @!component('components/input', {
+        label: 'Phone Number',
+        placeholder: '(212) 692-93-92',
+        id: 'phone',
+        type: 'number',
+        pattern: '[0-9]{9}'
+      })
+      </div>
+    </div>
+        </div>
+<div class="block">
+    <h2>
+      <span class="section-circle">2</span>
+      <span class="mr-10">
+        Payment Details
+      </span> 
+      <span class="lock-icon">
+        @!component('components/svg/lock-icon')
+      </span>
+    </h2>
+
+
+
+
+    <div class="indent-section">
+
+   <div class="input--bigger">
+     <div class="iconed-input">
+  
+<div class="w-full input-wrapper">
+    <div class="form-group form-group-card">
+       <label class="label" for="creditCard">Credit Card Number</label>
+        <input 
+        class="input card-input"
+         id="creditCard" 
+         name="creditCard" 
+          placeholder="0000 - 0000 - 0000 - 0000" 
+            pattern: '[0-9]{16}'>
+     
+    </div>
+    <div class="helper">
+        <p>Please fill creditCard field correctly.</p>
+    </div>
+</div>
+     
+        <div class="visa-icon">
+          @!component('components/svg/visa-icon')
+        </div>
+      </div> 
+       </div> 
+      
+
+
+
+      <div class="input--smaller">
+         <div class="iconed-input">
+         
+<div class="w-full input-wrapper">
+    <div class="form-group form-group-card">
+       <label class="label" for="CVV">Security code</label>
+        <input 
+        class="input question-input"
+         id="CVV" 
+         name="CVV" 
+          placeholder='***'
+             pattern: '[0-9]{3}'>
+     
+    </div>
+    <div class="helper">
+        <p>Please fill CVV field correctly.</p>
+    </div> 
+</div>
+
+        <span class="question-icon">
+          @!component('components/svg/question-icon')
+        </span>
+     </div>
+       </div>
+
+      <div class="input--smaller">
+      
+        @!component('components/input', {
+          label: 'Expiration date',
+          placeholder: 'MM/YY',
+          id: 'expDate',
+          pattern: '[0-9]{2}\/[0-9]{2}'
+        })
+      </div>
+
+
+
+
+
+
+
+      <button type="submit" class="button button--order w-full">
+        <span class="cart-icon">
+          @!component('components/svg/cart-icon')
+        </span>
+        Complete Purchase
+      </button>
+    </div>
+      </div>
+  </form>
+
+
+
+  <div class="order-box-wrapper">
+    <div class="order-box">
+      <h3 class="box-title">Your order</h3>
+      <div class="box-section">
+   <div class="order-box-border">
+            <div class="box-order-details">
+              <p>Apple Watch Sport</p>
+                   <p>$ 580</p>
+                   </div>
+                      <div class="box-order-details">
+              <p>Total Modern Buckle</p>
+                   <p>$ 380</p>
+                   </div>
+          </div>
+            <div class="order-box-border">
+           <div class="box-order-details">
+               <p>Total purchases</p>
+                   <p>$ 960</p>
+                   </div>
+                      <div class="box-order-details">
+               <p>Estimated tax</p>
+                   <p>$ 0</p>
+                   </div>
+          </div>
+          </div>
+      </div>
+      <div class="box-summary">
+        <div class="box-order-details align-total">
+          <p>Total</p>
+         <h3>$ 960</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
+</div>
